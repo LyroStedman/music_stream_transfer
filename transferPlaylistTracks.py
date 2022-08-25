@@ -67,7 +67,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
                                                scope="user-library-modify",
                                                redirect_uri="http://localhost:8000/callback"))
 not_found_tracks = []
-add_to_liked_tracks(requests.get("https://api.deezer.com/user/4591019/tracks").json())
+add_to_liked_tracks(requests.get("https://api.deezer.com/user/" + str(authentication_config["deezer"]["user_id"]) + "/tracks").json())
 for not_found_track in not_found_tracks:
     not_found_track.pop("album")
 retry_not_found_tracks = not_found_tracks.copy()

@@ -1,3 +1,5 @@
 authentication:
     client_id: 
     client_secret: 
+deezer:
+    user_id: 
